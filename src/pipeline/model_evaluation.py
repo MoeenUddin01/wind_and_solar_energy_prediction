@@ -4,7 +4,11 @@ import pickle
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+)
 
 # -----------------------------
 # Logger setup
@@ -60,8 +64,7 @@ class ModelVisualizer:
         Plot and save the confusion matrix as an image.
         """
         plt.figure(figsize=(6, 5))
-        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
-                    xticklabels=self.class_names, yticklabels=self.class_names)
+        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=self.class_names, yticklabels=self.class_names)
         plt.xlabel("Predicted")
         plt.ylabel("Actual")
         plt.title("Confusion Matrix")
